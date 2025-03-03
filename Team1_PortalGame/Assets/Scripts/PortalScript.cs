@@ -6,31 +6,15 @@ public class PortalScript : MonoBehaviour
     //set target in the Portal's trigger box. 
 
     [SerializeField]
-    private Transform target;
+    public Transform target;
 
-    private void Start()
+
+    private void Awake()
     {
+
         if(target == null)
         {
-            print("set target in inspector of Portal trigger box!");
-        }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        print("entered collider");
-        if(other.gameObject.CompareTag("Player"))
-        {
-            //print("player entered collider");
-            //print("target.transform.position is " + target.transform.position);
-
-            
-
-            other.transform.position = target.transform.position;
-            other.transform.rotation = target.transform.rotation;
-            Physics.SyncTransforms();
-
-           //print("position changed");
+            print("set target for portal!");
         }
     }
 }
