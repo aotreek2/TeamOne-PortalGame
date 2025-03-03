@@ -27,6 +27,7 @@ public class PortalScript : MonoBehaviour
             
 
             other.transform.position = target.transform.position;
+            other.transform.rotation = target.transform.rotation;
             Physics.SyncTransforms();
 
            //print("position changed");
