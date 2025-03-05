@@ -10,16 +10,18 @@ public class TurretScript : MonoBehaviour
     public bool attackMode;
     public bool idleMode;
     public Transform bulletSpawnPoint; //where the bullet will come from 
-    public float fireRate = 1f; //how fast the turret will shoot 
     
+    public float fireRate = 1f; //how fast the turret will shoot 
+    public float rotateSpeed = 5f;
     //privates
 
     private float fireIntervals = 0f; // time inbetween each shot
+    private Transform player; //getting player transform
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       idleMode = true;
+      
     }
 
      void OnTriggerEnter(Collider other)
@@ -29,22 +31,24 @@ public class TurretScript : MonoBehaviour
             Debug.Log("Button is pressed");
         }
 
-        if (other.CompareTag("TestPlayer")) 
+        if (other.CompareTag("Player")) 
 
          {
             Debug.Log("Target within range");
             attackMode = true; 
-            idleMode = false; 
+            idleMode = false;
+            player = other.transform;
          }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("TestPlayer")) 
+        if (other.CompareTag("Player")) 
         {
             Debug.Log("Target out of range");
             attackMode = false; 
-            idleMode = true; 
+            idleMode = true;
+            player = null;
         }
     }
 
@@ -70,6 +74,11 @@ public class TurretScript : MonoBehaviour
             Debug.Log("Turrets are firing at the player");
             idleMode = false; 
             Fire();
+
+            if (player != null)
+            {
+                TargetPlayer();
+            }
         }
 
     
@@ -95,5 +104,16 @@ public class TurretScript : MonoBehaviour
 
             Destroy(bulletPrefab, 5f); //destroys bullet after 5 seconds
         }
+    }
+
+    void TargetPlayer()
+    {
+        Vector3 direction = player.position - transform.position; //getting the target of the player 
+        direction.y = 0;
+
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
+
+
     }
 }
