@@ -19,20 +19,46 @@ public class TurretScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+       idleMode = true;
     }
 
-    public void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Object"))
         {
             Debug.Log("Button is pressed");
+        }
+
+        if (other.CompareTag("TestPlayer")) 
+
+         {
+            Debug.Log("Target within range");
+            attackMode = true; 
+            idleMode = false; 
+         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("TestPlayer")) 
+        {
+            Debug.Log("Target out of range");
+            attackMode = false; 
+            idleMode = true; 
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            attackMode = !attackMode;
+            idleMode = !attackMode; 
+           
+        }
+
         if(idleMode == true)
         {
             Debug.Log("Turrets are looking around");
@@ -51,12 +77,12 @@ public class TurretScript : MonoBehaviour
 
      void Fire()
     {
-        if (Time.time >= nextFireTime)
+        if (Time.time >= fireIntervals)
         {
            
             Shoot();
 
-            nextFireTime = Time.time + fireRate;
+            fireIntervals = Time.time + fireRate;
         }
     }
 
@@ -66,6 +92,8 @@ public class TurretScript : MonoBehaviour
         if (bulletPrefab && bulletSpawnPoint)
         {
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+            Destroy(bulletPrefab, 5f); //destroys bullet after 5 seconds
         }
     }
 }
