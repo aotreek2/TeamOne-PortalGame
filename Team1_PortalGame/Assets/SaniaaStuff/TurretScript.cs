@@ -10,6 +10,7 @@ public class TurretScript : MonoBehaviour
     public bool attackMode;
     public bool idleMode;
     public Transform bulletSpawnPoint; //where the bullet will come from 
+  
     
     public float fireRate = 1f; //how fast the turret will shoot 
     public float rotateSpeed = 5f;
@@ -65,13 +66,13 @@ public class TurretScript : MonoBehaviour
 
         if(idleMode == true)
         {
-            Debug.Log("Turrets are looking around");
+           // Debug.Log("Turrets are looking around");
             attackMode = false; 
 
         }
         if(attackMode == true)
         {
-            Debug.Log("Turrets are firing at the player");
+           // Debug.Log("Turrets are firing at the player");
             idleMode = false; 
             Fire();
 
