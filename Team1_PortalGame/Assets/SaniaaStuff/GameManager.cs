@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float playerHealth = 100;
     public Image redFlashImage; //flash image for when the player gets hit
     public float flashDuration = 0.5f;
+    public float fallDamage = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +43,10 @@ private IEnumerator FlashRedScreen()
     void Update()
     {
        if (playerHealth <= 0)
+        {
+            Death();
+        }
+       if(fallDamage <=100)
         {
             Death();
         }
