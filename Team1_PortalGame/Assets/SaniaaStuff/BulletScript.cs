@@ -1,24 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class BulletScript : MonoBehaviour
 {
     //publics 
      public float speed = 10f;
-    // public GameManager gameManager;
+     public GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-         Destroy(gameObject, 5f);
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-      /*  if(other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            gameManager.playerHealth -= 2f;
-        } */
+            gameManager.TakeDamage();
+            Debug.Log("Player has taken damage");
+        } 
     }
 
     // Update is called once per frame

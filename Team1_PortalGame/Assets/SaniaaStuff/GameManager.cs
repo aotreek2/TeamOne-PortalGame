@@ -16,15 +16,14 @@ public class GameManager : MonoBehaviour
          //redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 
-    void OnTriggerEnter(Collider other)
-{
-    if (other.CompareTag("Bullet"))
+    
+
+    public void TakeDamage()
     {
         playerHealth -= 15;
         Debug.Log("Player hit " + playerHealth);
         StartCoroutine(FlashRedScreen());
     }
-}
 
 private IEnumerator FlashRedScreen()
     {
