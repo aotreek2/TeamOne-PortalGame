@@ -7,8 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement & Camera")]
     [SerializeField] Camera playerCamera;
-    [SerializeField] private float walkSpeed = 3f;
-    [SerializeField] private float runSpeed = 7f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpForce = 300f;
     private float lookSpeed = 2f;
     private float lookXLimit = 45f;
@@ -27,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Script Related")]
     Rigidbody rb;
-    
 
     void Start()
     {
@@ -36,13 +36,9 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Movement();
-    }
-
-    void Update()
-    {
         Rotate();
         PickUp();
     }
@@ -54,27 +50,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            walkSpeed = runSpeed;
+            moveSpeed = runSpeed;
         }
         else
         {
-            walkSpeed = 3f;
+            moveSpeed = walkSpeed;
         }
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 forward = Camera.main.transform.forward;
-        Vector3 right = Camera.main.transform.right;
-        forward.y = 0; // keeps the movement horizontal
-        right.y = 0;
-        forward.Normalize();
-        right.Normalize();
+        Vector3 move = transform.right * moveHorizontal + transform.forward * moveVertical;
+        rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
 
-        Vector3 movement = (forward * moveVertical + right * moveHorizontal).normalized;
-        rb.MovePosition(transform.position + movement * walkSpeed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             rb.AddForce(Vector3.up * jumpForce);
         }
@@ -153,7 +142,16 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, groundCheckDistance + 0.1f, groundLayer);
+        float rayLength = 1f;
+        Vector3 rayOrigin = transform.position;
+        Debug.DrawRay(rayOrigin, Vector3.down, Color.red, rayLength);
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, rayLength, groundLayer))
+        {
+            return true;
+        }
+
+        return false;
     }
 
 void OnCollisionEnter(Collision collision)
