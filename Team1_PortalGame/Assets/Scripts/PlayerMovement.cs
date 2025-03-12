@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * moveHorizontal + transform.forward * moveVertical;
+        Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
         rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
