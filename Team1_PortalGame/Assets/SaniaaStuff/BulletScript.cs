@@ -6,12 +6,12 @@ public class BulletScript : MonoBehaviour
 {
     //publics 
      public float speed = 10f;
-     public GameManager gameManager;
+     private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     public void OnTriggerEnter(Collider other)
