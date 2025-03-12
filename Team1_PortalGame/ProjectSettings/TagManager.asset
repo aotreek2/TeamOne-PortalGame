@@ -7,6 +7,8 @@ TagManager:
   - Cube
   - TestPlayer
   - Object
+  - Door
+  - Bullet
   layers:
   - Default
   - TransparentFX
