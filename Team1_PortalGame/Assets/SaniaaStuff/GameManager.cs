@@ -13,18 +13,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         redFlashImage.enabled = false;
-         //redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
+      // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 
-    void OnTriggerEnter(Collider other)
-{
-    if (other.CompareTag("Bullet"))
+    
+
+    public void TakeDamage()
     {
         playerHealth -= 15;
         Debug.Log("Player hit " + playerHealth);
         StartCoroutine(FlashRedScreen());
     }
-}
+
+    public void Death()
+    {
+        Debug.Log("Player has Died");
+    }
 
 private IEnumerator FlashRedScreen()
     {
@@ -37,6 +41,9 @@ private IEnumerator FlashRedScreen()
     // Update is called once per frame
     void Update()
     {
-        
+       if (playerHealth <= 0)
+        {
+            Death();
+        }
     }
 }

@@ -103,7 +103,7 @@ public class TurretScript : MonoBehaviour
         {
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-            Destroy(bulletPrefab, 5f); //destroys bullet after 5 seconds
+            
         }
     }
 
