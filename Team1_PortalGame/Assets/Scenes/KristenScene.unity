@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 13668375}
   - component: {fileID: 13668378}
-  - component: {fileID: 13668377}
   - component: {fileID: 13668376}
   m_Layer: 0
   m_Name: PortalCam
@@ -197,14 +196,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &13668377
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13668374}
-  m_Enabled: 1
 --- !u!20 &13668378
 Camera:
   m_ObjectHideFlags: 0
@@ -999,7 +990,7 @@ GameObject:
   - component: {fileID: 207427586}
   - component: {fileID: 207427585}
   m_Layer: 0
-  m_Name: e
+  m_Name: Red1Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1012,7 @@ MonoBehaviour:
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
-  m_RenderingLayers: 1
+  m_RenderingLayers: 2
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
   m_ShadowRenderingLayers: 1
@@ -1077,7 +1068,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -1101,12 +1092,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207427584}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7048078, y: 0.69963884, z: -0.064216666, w: 0.09812052}
-  m_LocalPosition: {x: -30.82, y: -13.55, z: -35.14}
+  m_LocalRotation: {x: -0.45296633, y: -0.56410104, z: 0.5437824, w: 0.42533767}
+  m_LocalPosition: {x: -27.1, y: -7, z: 36.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 682743617}
   m_LocalEulerAnglesHint: {x: 13.189, y: 177.246, z: 90.103}
 --- !u!1001 &213223847
 PrefabInstance:
@@ -3188,7 +3179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 555489937}
   - component: {fileID: 555489940}
-  - component: {fileID: 555489939}
   - component: {fileID: 555489938}
   m_Layer: 0
   m_Name: Red2PortalCam
@@ -3207,7 +3197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5006455, y: 0.49935362, z: 0.5006455, w: 0.49935362}
   m_LocalPosition: {x: 1.2100984, y: 0, z: 0.11999881}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 814666725}
@@ -3241,7 +3231,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
-  m_AllowXRRendering: 0
+  m_AllowXRRendering: 1
   m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
   m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -3256,14 +3246,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &555489939
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555489936}
-  m_Enabled: 1
 --- !u!20 &555489940
 Camera:
   m_ObjectHideFlags: 0
@@ -3358,7 +3340,6 @@ GameObject:
   m_Component:
   - component: {fileID: 590437308}
   - component: {fileID: 590437311}
-  - component: {fileID: 590437310}
   - component: {fileID: 590437309}
   m_Layer: 0
   m_Name: PortalCam
@@ -3426,14 +3407,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &590437310
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590437307}
-  m_Enabled: 1
 --- !u!20 &590437311
 Camera:
   m_ObjectHideFlags: 0
@@ -3495,7 +3468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 596642624}
   - component: {fileID: 596642627}
-  - component: {fileID: 596642626}
   - component: {fileID: 596642625}
   m_Layer: 0
   m_Name: Red1PortalCam
@@ -3548,7 +3520,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
-  m_AllowXRRendering: 0
+  m_AllowXRRendering: 1
   m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
   m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -3563,14 +3535,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &596642626
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596642623}
-  m_Enabled: 1
 --- !u!20 &596642627
 Camera:
   m_ObjectHideFlags: 0
@@ -3663,7 +3627,6 @@ GameObject:
   m_Component:
   - component: {fileID: 602613173}
   - component: {fileID: 602613176}
-  - component: {fileID: 602613175}
   - component: {fileID: 602613174}
   m_Layer: 0
   m_Name: PortalCam
@@ -3731,14 +3694,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &602613175
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602613172}
-  m_Enabled: 1
 --- !u!20 &602613176
 Camera:
   m_ObjectHideFlags: 0
@@ -4071,6 +4026,7 @@ Transform:
   - {fileID: 2060102488}
   - {fileID: 1175840802}
   - {fileID: 596642624}
+  - {fileID: 207427587}
   m_Father: {fileID: 700900599}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &682743618
@@ -4320,7 +4276,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4873399
+      value: 1.48734
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_LocalScale.y
@@ -4328,7 +4284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.74367
+      value: -0.74367
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4373,6 +4329,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5567,7 +5527,6 @@ GameObject:
   m_Component:
   - component: {fileID: 906729576}
   - component: {fileID: 906729579}
-  - component: {fileID: 906729578}
   - component: {fileID: 906729577}
   m_Layer: 0
   m_Name: PortalCam
@@ -5635,14 +5594,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &906729578
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906729575}
-  m_Enabled: 1
 --- !u!20 &906729579
 Camera:
   m_ObjectHideFlags: 0
@@ -6227,7 +6178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 996475888}
   - component: {fileID: 996475891}
-  - component: {fileID: 996475890}
   - component: {fileID: 996475889}
   m_Layer: 0
   m_Name: PortalCam
@@ -6295,14 +6245,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &996475890
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996475887}
-  m_Enabled: 1
 --- !u!20 &996475891
 Camera:
   m_ObjectHideFlags: 0
@@ -9100,7 +9042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_RenderingLayerMask
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: faa6a8626ce394e8699d4ae65dbecd15, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -9703,7 +9645,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1903900398}
   - component: {fileID: 1903900401}
-  - component: {fileID: 1903900400}
   - component: {fileID: 1903900399}
   m_Layer: 0
   m_Name: PortalCam
@@ -9771,14 +9712,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &1903900400
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903900397}
-  m_Enabled: 1
 --- !u!20 &1903900401
 Camera:
   m_ObjectHideFlags: 0
@@ -10978,4 +10911,3 @@ SceneRoots:
   - {fileID: 1523441993}
   - {fileID: 1211060527}
   - {fileID: 1920014417}
-  - {fileID: 207427587}
