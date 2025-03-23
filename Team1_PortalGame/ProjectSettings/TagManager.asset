@@ -9,6 +9,8 @@ TagManager:
   - Object
   - Door
   - Bullet
+  - Button1
+  - PickUp1
   layers:
   - Default
   - TransparentFX
