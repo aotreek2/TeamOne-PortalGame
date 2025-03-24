@@ -43,8 +43,8 @@ public class ButtonScript : MonoBehaviour
         if(gameObject.tag == "Button1" && other.gameObject.tag == "Player")
         {
             //print("gameObject.tag is" + gameObject.tag);
-            portal1.SetActive(true);
-            print("portal1 Set Active");
+            //portal1.SetActive(true);
+            print("portal Set Active");
         }
 
         //room 1 button
