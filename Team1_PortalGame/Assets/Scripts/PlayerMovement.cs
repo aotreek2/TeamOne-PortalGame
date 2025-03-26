@@ -55,11 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
         rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-        }
     }
 
     #region Handles Movment
@@ -74,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             moveSpeed = walkSpeed;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
         }
 
         if (isGrounded && previousHeight - transform.position.y > fallThreshold)
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         obj.transform.SetParent(playerHand); // handTransform is the transform of the player's hand
         obj.transform.position = playerHand.position;
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-
+        obj.GetComponent<Rigidbody>().useGravity = false;
     }
     void Drop()
     {
@@ -151,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
         obj = playerHand.transform.GetChild(0).gameObject;
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         playerHand.DetachChildren();
+        obj.GetComponent<Rigidbody>().useGravity = true;
         isHolding = false;
     }
 
