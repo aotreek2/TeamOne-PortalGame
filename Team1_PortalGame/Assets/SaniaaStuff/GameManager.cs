@@ -1,19 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
 
     public float playerHealth = 100;
+    [SerializeField] private TMP_Text healthTxt;
     public Image redFlashImage; //flash image for when the player gets hit
     public float flashDuration = 0.5f;
     public float fallDamage = 0f;
+    [SerializeField] private MenuController menuController;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         redFlashImage.enabled = false;
+        menuController.DisableEndGamePanel();
       // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 
@@ -22,12 +27,14 @@ public class GameManager : MonoBehaviour
     public void TakeDamage()
     {
         playerHealth -= 15;
+        healthTxt.text = "Health: " + playerHealth;
         Debug.Log("Player hit " + playerHealth);
         StartCoroutine(FlashRedScreen());
     }
 
     public void Death()
     {
+        //menuController.EnableEndGamePanel();
         Debug.Log("Player has Died");
     }
 

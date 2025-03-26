@@ -4,35 +4,35 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private TMP_Text resultTxt;
-    [SerializeField] private GameObject helpPanel, mainPanel, resultsPanel;
+    [SerializeField] private GameObject helpPanel, mainPanel, endGamePanel;
+    public TMP_Text outcomeTxt;
     Scene scene;
 
     private void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (scene.name == "MainMenu")
+        if (scene.name == "Main Menu")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             helpPanel.SetActive(false);
         }
-        else if (scene.name == "MainGame")
+        else
         {
-            resultsPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
     }
     public void OnPlayButtonClicked()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void OnMenuButtonClicked()
     {
-        resultsPanel.SetActive(false);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void OnHelpButtonClicked()
@@ -49,6 +49,17 @@ public class MenuController : MonoBehaviour
     public void OnQuitButtonClicked()
     {
         Application.Quit();
+    }
+
+    public void DisableEndGamePanel()
+    {
+        endGamePanel.SetActive(true);
+    }
+    public void EnableEndGamePanel()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        endGamePanel.SetActive(true);
     }
 }
 
