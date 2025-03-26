@@ -2689,7 +2689,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_Name
-      value: RollingBalls_Sci-fi_1_5
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_TagString
@@ -3015,7 +3015,7 @@ Transform:
   - {fileID: 1091619248}
   - {fileID: 2097260631}
   - {fileID: 371770679}
-  - {fileID: 952430980}
+  - {fileID: 1988099365}
   - {fileID: 1820535585}
   - {fileID: 1523441993}
   - {fileID: 1119576305}
@@ -3587,7 +3587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_Name
-      value: RollingBalls_Sci-fi_1_5 (2)
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_TagString
@@ -6888,7 +6888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7680529403145111814, guid: 853665bfc6ac8324784ed3fc27bb7f73, type: 3}
       propertyPath: m_Name
-      value: RollingBalls_Sci-fi_1_1
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 7680529403145111814, guid: 853665bfc6ac8324784ed3fc27bb7f73, type: 3}
       propertyPath: m_TagString
@@ -7127,60 +7127,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
   m_PrefabInstance: {fileID: 460935372}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &952430979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 952430980}
-  - component: {fileID: 952430981}
-  m_Layer: 0
-  m_Name: Boundary
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &952430980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952430979}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.069, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1988099365}
-  m_Father: {fileID: 514699519}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &952430981
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952430979}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &971848218
 GameObject:
   m_ObjectHideFlags: 0
@@ -8817,7 +8763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1156680540414199998, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_Name
-      value: RollingBalls_Sci-fi_3_3
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 1156680540414199998, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_TagString
@@ -13693,7 +13639,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_Name
-      value: RollingBalls_Sci-fi_1_5 (1)
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 3262878344813469888, guid: f8147a1a777b5d440bce2f1043687381, type: 3}
       propertyPath: m_TagString
@@ -13948,11 +13894,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 952430980}
+    m_TransformParent: {fileID: 514699519}
     m_Modifications:
     - target: {fileID: 1156680540414199998, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_Name
-      value: PickUp1
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 1156680540414199998, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_TagString
@@ -13960,11 +13906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751717886397200344, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.69999987
+      value: 0.6999998
       objectReference: {fileID: 0}
     - target: {fileID: 5751717886397200344, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.69999987
+      value: 0.6999998
       objectReference: {fileID: 0}
     - target: {fileID: 5751717886397200344, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_LocalScale.z
@@ -13972,7 +13918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751717886397200344, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4521933
+      value: -4.5211926
       objectReference: {fileID: 0}
     - target: {fileID: 5751717886397200344, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
       propertyPath: m_LocalPosition.y
