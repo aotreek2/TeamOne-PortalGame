@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
-    public float playerHealth = 100;
+    public float playerHealth;
     [SerializeField] private TMP_Text healthTxt;
     public Image redFlashImage; //flash image for when the player gets hit
     public float flashDuration = 0.5f;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         redFlashImage.enabled = false;
         menuController.DisableEndGamePanel();
         healthTxt.text = "Health: " + playerHealth;
+        playerHealth = 100;
         // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 

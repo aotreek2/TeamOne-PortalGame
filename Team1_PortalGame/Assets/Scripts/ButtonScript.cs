@@ -26,7 +26,7 @@ public class ButtonScript : MonoBehaviour
     //Later add a text obj with a rejection message if it doesn't work
     private void Start()
     {
-        targetObj.SetActive(false);
+       // targetObj.SetActive(false);
     }
 
 
