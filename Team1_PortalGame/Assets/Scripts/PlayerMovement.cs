@@ -140,16 +140,16 @@ public class PlayerMovement : MonoBehaviour
     #region Handles Pickups
     void PickupObject(GameObject obj)
     {
-        obj.GetComponent<Rigidbody>().isKinematic = true;
         obj.transform.SetParent(playerHand); // handTransform is the transform of the player's hand
         obj.transform.position = playerHand.position;
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
 
     }
     void Drop()
     {
         GameObject obj;
         obj = playerHand.transform.GetChild(0).gameObject;
-        obj.GetComponent<Rigidbody>().isKinematic = false;
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         playerHand.DetachChildren();
         isHolding = false;
     }
