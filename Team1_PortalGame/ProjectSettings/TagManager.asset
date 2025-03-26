@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - Button1
   - PickUp1
+  - PickUp2
+  - Button2
   layers:
   - Default
   - TransparentFX
