@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
 
 
+    private void Awake()
+    {
+        
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +27,7 @@ public class GameManager : MonoBehaviour
         menuController.DisableEndGamePanel();
       // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
+
 
     
 
@@ -42,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        //menuController.EnableEndGamePanel();
+        menuController.EnableEndGamePanel();
         Debug.Log("Player has Died");
         //playerMovement.RespawnAtCheckpoint();
     }
@@ -62,9 +68,6 @@ private IEnumerator FlashRedScreen()
         {
             Death();
         }
-       if(fallDamage <=100)
-        {
-            Death();
-        }
+      
     }
 }

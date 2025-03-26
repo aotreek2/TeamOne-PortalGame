@@ -53,7 +53,7 @@ public class MenuController : MonoBehaviour
 
     public void DisableEndGamePanel()
     {
-        endGamePanel.SetActive(true);
+        endGamePanel.SetActive(false);
     }
     public void EnableEndGamePanel()
     {
