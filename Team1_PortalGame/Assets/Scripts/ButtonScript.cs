@@ -24,7 +24,7 @@ public class ButtonScript : MonoBehaviour
         portal1 = GameObject.Find("Portal1");
         door1 = GameObject.Find("Door1");
         RedPortal1 = GameObject.Find("RedPortalPair1");
-        RedDoor = GameObject.Find("Door1");
+       
 
         /*
                 portal2 = GameObject.Find("Portal2");
@@ -35,7 +35,7 @@ public class ButtonScript : MonoBehaviour
                 */
 
         RedPortal1.SetActive(false);
-        RedDoor.SetActive(true);
+        door1.SetActive(true);
     }
 
     //each button is set to trigger a specific action when a pickup is placed on them based on name of button and name of button.
@@ -44,8 +44,8 @@ public class ButtonScript : MonoBehaviour
         print("entered collider");
 
         //room 1 button
-        //if(gameObject.tag == "Button1" && other.gameObject.tag == "PickUp1")
-        if (gameObject.tag == "Button1" && other.gameObject.tag == "Player")
+        if(gameObject.tag == "Button1" && other.gameObject.tag == "PickUp1")
+        //if (gameObject.tag == "Button1" && other.gameObject.tag == "Player")
         {
             //print("gameObject.tag is" + gameObject.tag);
             //portal1.SetActive(true);
@@ -60,7 +60,7 @@ public class ButtonScript : MonoBehaviour
             {
                 print("gameObject.tag is" + gameObject.tag);
                 portal1.SetActive(true);
-                RedDoor.SetActive(false);
+                door1.SetActive(false);
             }
         }
 
