@@ -1959,7 +1959,7 @@ Transform:
   m_GameObject: {fileID: 371770675}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.455, y: 2.62, z: 1.5233607}
+  m_LocalPosition: {x: -9.455, y: 3.16, z: 1.5233607}
   m_LocalScale: {x: 0.29381, y: 2.6454976, z: 1.9415}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8736,7 +8736,8 @@ PrefabInstance:
       propertyPath: m_text
       value: Makes Red Door Open
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6801466462139327438, guid: 22362455510be9c429f97baa60093fbf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -8745,7 +8746,7 @@ PrefabInstance:
       addedObject: {fileID: 1119576309}
     - targetCorrespondingSourceObject: {fileID: 3333122429197030454, guid: 22362455510be9c429f97baa60093fbf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1119576307}
+      addedObject: {fileID: 1119576315}
     - targetCorrespondingSourceObject: {fileID: 6384484611384384794, guid: 22362455510be9c429f97baa60093fbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -8760,21 +8761,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3333122429197030454, guid: 22362455510be9c429f97baa60093fbf, type: 3}
   m_PrefabInstance: {fileID: 1119576304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1119576307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119576306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0078e809de9c84cef962b9fade3777a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObj: {fileID: 0}
-  pickUpName: 
-  ButtonAnimator: {fileID: 0}
 --- !u!1 &1119576308 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1939702111974059271, guid: 22362455510be9c429f97baa60093fbf, type: 3}
@@ -8802,6 +8788,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1119576315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119576306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0078e809de9c84cef962b9fade3777a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 371770675}
+  pickUpName: PickUp1
+  ButtonAnimator: {fileID: 1820535586}
 --- !u!1 &1124468907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1156680540414199998, guid: c9250b6a9581ab146850127ee38c6631, type: 3}
@@ -9480,6 +9481,10 @@ PrefabInstance:
       propertyPath: targetObj
       value: 
       objectReference: {fileID: 682743616}
+    - target: {fileID: 6801466462139327438, guid: 22362455510be9c429f97baa60093fbf, type: 3}
+      propertyPath: pickUpName
+      value: PickUp1
+      objectReference: {fileID: 0}
     - target: {fileID: 6801466462139327438, guid: 22362455510be9c429f97baa60093fbf, type: 3}
       propertyPath: ButtonAnimator
       value: 
@@ -12343,7 +12348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1738077336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12353,14 +12358,14 @@ RectTransform:
   m_GameObject: {fileID: 1738077335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.39896, y: 0.39896, z: 0.39896}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1319266719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 25}
+  m_AnchoredPosition: {x: 51, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738077337

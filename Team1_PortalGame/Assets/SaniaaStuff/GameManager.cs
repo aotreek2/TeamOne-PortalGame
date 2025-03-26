@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
     {
         redFlashImage.enabled = false;
         menuController.DisableEndGamePanel();
-      // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
+        healthTxt.text = "Health: " + playerHealth;
+        // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 
 
