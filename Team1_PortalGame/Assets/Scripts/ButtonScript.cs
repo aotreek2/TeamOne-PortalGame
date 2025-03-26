@@ -22,7 +22,8 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] private string pickUpName;
 
     [SerializeField] private Animator ButtonAnimator;
-
+    [SerializeField] private Animator elevatorDoorAnim;
+ 
     //Later add a text obj with a rejection message if it doesn't work
     private void Start()
     {
@@ -39,6 +40,13 @@ public class ButtonScript : MonoBehaviour
         //room 1 button
         if (other.gameObject.name == pickUpName)
         {
+            if (other.gameObject.name == "Elevator")
+            {
+                //plays elevator door anim
+                elevatorDoorAnim.Play("door_2_open");
+                //elevatorDoorAnim.Play("door_2_opened");
+            }
+
             //print("gameObject.tag is" + gameObject.tag);
             //portal1.SetActive(true);
             targetObj.SetActive(true);
@@ -63,55 +71,6 @@ public class ButtonScript : MonoBehaviour
         }
 
     }
-
-    /*
-    private void Start()
-    {
-        //Level 1
-        portal1 = GameObject.Find("Portal1");
-        door1 = GameObject.Find("Door1");
-        RedPortal1 = GameObject.Find("RedPortalPair1");
-
-
-        /*
-                portal2 = GameObject.Find("Portal2");
-                portal3 = GameObject.Find("Portal3");
-                elevator = GameObject.Find("Elevator");
-                door2 = GameObject.Find("Door2");
-                door3 = GameObject.Find("Door3");
-
-
-        RedPortal1.SetActive(false);
-        door1.SetActive(true);
-    }
-
-    //each button is set to trigger a specific action when a pickup is placed on them based on name of button and name of button.
-    private void OnTriggerEnter(Collider other)
-    {
-        print("entered collider");
-
-        //room 1 button
-        if(gameObject.tag == "Button1" && other.gameObject.tag == "PickUp1")
-        //if (gameObject.tag == "Button1" && other.gameObject.tag == "Player")
-        {
-            //print("gameObject.tag is" + gameObject.tag);
-            //portal1.SetActive(true);
-            RedPortal1.SetActive(true);
-            print("portal Set Active");
-        }
-        {
-
-            //room 1 button
-            if(gameObject.tag == "Button2" && other.gameObject.tag == "PickUp1")
-            if (gameObject.tag == "Button2" && other.gameObject.tag == "Player")
-            {
-                print("gameObject.tag is" + gameObject.tag);
-                portal1.SetActive(true);
-                door1.SetActive(false);
-            }
-        }
-    */
-
 
 }
 
