@@ -48,6 +48,20 @@ public class PlayerMovement : MonoBehaviour
         PickUp();
     }
 
+    private void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+        rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+        }
+    }
+
     #region Handles Movment
     private void Movement()
     {
@@ -60,17 +74,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             moveSpeed = walkSpeed;
-        }
-
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
-        rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
         }
 
         if (isGrounded && previousHeight - transform.position.y > fallThreshold)
