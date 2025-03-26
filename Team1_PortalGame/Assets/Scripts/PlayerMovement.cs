@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 2f))
         {
             // Check if the hit object is interactive (tag or layer check, etc.)
-            if (hit.collider.CompareTag("Cube"))
+            if (hit.collider.CompareTag("PickUp1"))
             {
                 // Pickup the object
                 PickupObject(hit.collider.gameObject);
