@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float flashDuration = 0.5f;
     public float fallDamage = 0f;
     [SerializeField] private MenuController menuController;
+    [SerializeField] private PlayerMovement playerMovement;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,10 +33,18 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FlashRedScreen());
     }
 
+    public void TakeFallDamage(float damage)
+    {
+        playerHealth -= damage;
+        healthTxt.text = "Health: " + playerHealth;
+        StartCoroutine(FlashRedScreen());
+    }
+
     public void Death()
     {
         //menuController.EnableEndGamePanel();
         Debug.Log("Player has Died");
+        //playerMovement.RespawnAtCheckpoint();
     }
 
 private IEnumerator FlashRedScreen()

@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Script Related")]
     Rigidbody rb;
 
+ //Fall Damage Related
+    private float previousHeight = 0f;
+    private float fallThreshold = 3f; // how high you have to be for the damage to take place
+    private float fallDamage = 10f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>(); //finds character controller component
@@ -67,6 +72,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
         }
+
+        if (isGrounded && previousHeight - transform.position.y > fallThreshold)
+        {
+            FindObjectOfType<GameManager>().TakeDamage();
+            Debug.Log("Can take Fall Damage");
+        }
+
+        
+        previousHeight = transform.position.y;
     }
 
     #endregion
@@ -139,7 +153,24 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    #region Handles Checkpoint(for later)
 
+    /* public void UpdateCheckpoint(Vector3 newCheckpointPosition)
+    {
+        lastCheckpointPosition = newCheckpointPosition;
+        isCheckpointSet = true;
+        Debug.Log("Checkpoint updated to: " + newCheckpointPosition);
+    }
+
+    
+    public void RespawnAtCheckpoint()
+    {
+        transform.position = lastCheckpointPosition;
+        rb.velocity = Vector3.zero;
+        Debug.Log("Player respawned at checkpoint: " + lastCheckpointPosition);
+    }
+} */
+    #endregion
     bool IsGrounded()
     {
         float rayLength = 1f;
