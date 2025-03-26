@@ -9331,6 +9331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button1
       objectReference: {fileID: 0}
+    - target: {fileID: 2136389518867272161, guid: 22362455510be9c429f97baa60093fbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855696
+      objectReference: {fileID: 0}
     - target: {fileID: 3333122429197030454, guid: 22362455510be9c429f97baa60093fbf, type: 3}
       propertyPath: m_TagString
       value: Button1
@@ -9387,10 +9391,18 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1939702111974059271, guid: 22362455510be9c429f97baa60093fbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1820535586}
     - targetCorrespondingSourceObject: {fileID: 6384484611384384794, guid: 22362455510be9c429f97baa60093fbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 22362455510be9c429f97baa60093fbf, type: 3}
+--- !u!1 &1211060528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939702111974059271, guid: 22362455510be9c429f97baa60093fbf, type: 3}
+  m_PrefabInstance: {fileID: 1211060527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253293601
 GameObject:
   m_ObjectHideFlags: 0
@@ -12703,6 +12715,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5098807314080738869, guid: 22362455510be9c429f97baa60093fbf, type: 3}
   m_PrefabInstance: {fileID: 1211060527}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1820535586
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211060528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 945e052f0e950df4ea0d95a853b1b3e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1828311474
 GameObject:
   m_ObjectHideFlags: 0
