@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5098807314080738869}
+  - component: {fileID: 4792142508261829877}
   m_Layer: 0
   m_Name: ButtonPrefab
   m_TagString: Untagged
@@ -35,6 +36,29 @@ Transform:
   - {fileID: 6104979545550403005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4792142508261829877
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939702111974059271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39612675
+  m_Height: 1.2196234
+  m_Direction: 1
+  m_Center: {x: -0.10387325, y: 0.10981172, z: 0}
 --- !u!1 &3333122429197030454
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0078e809de9c84cef962b9fade3777a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetObj: {fileID: 0}
+  pickUpName: 
+  ButtonAnimator: {fileID: 0}
 --- !u!1 &6384484611384384794
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] private string pickUpName;
 
     [SerializeField] private Animator ButtonAnimator;
-    [SerializeField] private Animator elevatorDoorAnim;
+    private Animator elevatorDoorAnim;
  
     //Later add a text obj with a rejection message if it doesn't work
     private void Start()
@@ -42,8 +42,11 @@ public class ButtonScript : MonoBehaviour
         {
             if (other.gameObject.name == "Elevator")
             {
+                GameObject elevator = GameObject.Find("Elevator");
+                elevatorDoorAnim = elevator.GetComponent<Animator>();
                 //plays elevator door anim
                 elevatorDoorAnim.Play("door_2_open");
+                
                 //elevatorDoorAnim.Play("door_2_opened");
             }
 
@@ -58,7 +61,7 @@ public class ButtonScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        print("exitted collider");
+        print("exited collider");
 
         //room 1 button
         if (other.gameObject.name == pickUpName)
