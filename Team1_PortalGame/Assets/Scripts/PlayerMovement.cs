@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             HandleRayCast();
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && isHolding == true)
         {
             Drop();
         }

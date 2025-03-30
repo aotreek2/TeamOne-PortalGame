@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject helpPanel, mainPanel, endGamePanel;
+    [SerializeField] private AudioSource buttonClick;
     public TMP_Text outcomeTxt;
     Scene scene;
 
@@ -27,27 +28,32 @@ public class MenuController : MonoBehaviour
     }
     public void OnPlayButtonClicked()
     {
+        buttonClick.Play();
         SceneManager.LoadScene("MainScene");
     }
 
     public void OnMenuButtonClicked()
     {
+        buttonClick.Play();
         SceneManager.LoadScene("Main Menu");
     }
 
     public void OnHelpButtonClicked()
     {
+        buttonClick.Play();
         helpPanel.SetActive(true);
         mainPanel.SetActive(false);
     }
 
     public void OnCloseButtonClicked()
     {
+        buttonClick.Play();
         helpPanel.SetActive(false);
         mainPanel.SetActive(true);
     }
     public void OnQuitButtonClicked()
     {
+        buttonClick.Play();
         Application.Quit();
     }
 

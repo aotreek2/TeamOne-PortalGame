@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        redFlashImage.enabled = false;
+        //redFlashImage.enabled = false;
         menuController.DisableEndGamePanel();
         healthTxt.text = "Health: " + playerHealth;
         playerHealth = 100;

@@ -10,7 +10,7 @@ public class TurretScript : MonoBehaviour
     public bool attackMode;
     public bool idleMode;
     public Transform bulletSpawnPoint; //where the bullet will come from 
-  
+    [SerializeField] private AudioSource turrentSFX; //add for sfx for turrent shooting (Ahmed)
     
     public float fireRate = 1f; //how fast the turret will shoot 
     public float rotateSpeed = 5f;
@@ -102,7 +102,7 @@ public class TurretScript : MonoBehaviour
         if (bulletPrefab && bulletSpawnPoint)
         {
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
+            turrentSFX.Play();
             
         }
     }
