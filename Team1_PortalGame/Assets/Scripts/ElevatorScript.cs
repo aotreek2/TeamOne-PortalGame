@@ -5,6 +5,7 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private Animator elevatorAnim;
     [SerializeField] private AudioSource openSFX, closeSFX;
     [SerializeField] private Animator door1Animator;
+    
 
     private void Start()
     {
@@ -13,13 +14,13 @@ public class ElevatorScript : MonoBehaviour
     public void PlayOpenSFX()
     {
         openSFX.Play();
-        door1Animator.Play("door_2_open");
+        
     }
 
     public void PlayCloseSFX()
     {
         closeSFX.Play();
-        door1Animator.Play("door_2_close");
+        //door1Animator.Play("door_2_close");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +28,7 @@ public class ElevatorScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             elevatorAnim.Play("ElevatorAnim");
+            door1Animator.Play("door_2_open");
         }
     }
 
