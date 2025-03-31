@@ -40,6 +40,9 @@ public class ButtonScript : MonoBehaviour
         //room 1 button
         if (other.gameObject.name == pickUpName)
         {
+            ButtonAnimator.Play("ButtonDownAnim");
+            ButtonAnimator.Play("ButtonPressedAnim");
+
             if (other.gameObject.name == "Elevator")
             {
                 GameObject elevator = GameObject.Find("Elevator");
@@ -49,12 +52,14 @@ public class ButtonScript : MonoBehaviour
                 
                 //elevatorDoorAnim.Play("door_2_opened");
             }
+            else
+            {
+                //print("gameObject.tag is" + gameObject.tag);
+                //portal1.SetActive(true);
+                targetObj.SetActive(true);
+                print("portal Set Active");
+            }
 
-            //print("gameObject.tag is" + gameObject.tag);
-            //portal1.SetActive(true);
-            targetObj.SetActive(true);
-            print("portal Set Active");
-            ButtonAnimator.Play("ButtonUpAnim");
         }
        
     }
@@ -70,7 +75,8 @@ public class ButtonScript : MonoBehaviour
             //portal1.SetActive(true);
             targetObj.SetActive(false);
             print("targetObj deactivated");
-            ButtonAnimator.Play("ButtonDownAnim");
+            ButtonAnimator.Play("ButtonUpAnim");
+            ButtonAnimator.Play("ButtonNeutralAnim");
         }
 
     }
