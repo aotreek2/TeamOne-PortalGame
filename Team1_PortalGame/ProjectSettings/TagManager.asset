@@ -16,6 +16,7 @@ TagManager:
   - Button3
   - Button4
   - Button5
+  - Portal
   layers:
   - Default
   - TransparentFX

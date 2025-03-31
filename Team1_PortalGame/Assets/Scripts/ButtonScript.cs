@@ -13,9 +13,6 @@ using System;
 
 public class ButtonScript : MonoBehaviour
 {
-    //level 1:
-    //private GameObject portal1, door1, RedPortal1, RedDoor;
-    //portal2, portal3, elevator, door1, door2, door3; 
 
     //Set target object and pickUp that triggers it
     [SerializeField] private GameObject targetObj;
@@ -23,6 +20,7 @@ public class ButtonScript : MonoBehaviour
 
     [SerializeField] private Animator ButtonAnimator;
     private Animator elevatorDoorAnim;
+    private Animator doorAnimator;
  
     //Later add a text obj with a rejection message if it doesn't work
     private void Start()
@@ -41,23 +39,32 @@ public class ButtonScript : MonoBehaviour
         if (other.gameObject.name == pickUpName)
         {
             ButtonAnimator.Play("ButtonDownAnim");
-            ButtonAnimator.Play("ButtonPressedAnim");
+            //ButtonAnimator.Play("ButtonPressedAnim");
 
-            if (other.gameObject.name == "Elevator")
+            if(targetObj.tag == "Door")
+            {
+                doorAnimator = targetObj.GetComponent<Animator>();
+                doorAnimator.Play("door_2_open");
+                //doorAnimator.Play("door_2_opened");
+            }
+            else if (other.gameObject.tag == "Elevator")
             {
                 GameObject elevator = GameObject.Find("Elevator");
                 elevatorDoorAnim = elevator.GetComponent<Animator>();
                 //plays elevator door anim
                 elevatorDoorAnim.Play("door_2_open");
-                
-                //elevatorDoorAnim.Play("door_2_opened");
+                elevatorDoorAnim.Play("door_2_opened");
             }
-            else
+            else if (targetObj.tag == "Portal")//Portals
             {
                 //print("gameObject.tag is" + gameObject.tag);
                 //portal1.SetActive(true);
                 targetObj.SetActive(true);
                 print("portal Set Active");
+            }
+            else
+            {
+                print("target type unclear.");
             }
 
         }
@@ -71,13 +78,28 @@ public class ButtonScript : MonoBehaviour
         //room 1 button
         if (other.gameObject.name == pickUpName)
         {
-            //print("gameObject.tag is" + gameObject.tag);
-            //portal1.SetActive(true);
-            targetObj.SetActive(false);
-            print("targetObj deactivated");
+            if(targetObj.tag == "Door")
+            {
+                doorAnimator = targetObj.GetComponent<Animator>();
+                doorAnimator.Play("door_2_close");
+                //doorAnimator.Play("door_2_closed");
+            }
+            else if (targetObj.tag == "Portal")//Portals
+            {
+                //print("gameObject.tag is" + gameObject.tag);
+                //portal1.SetActive(true);
+                targetObj.SetActive(false);
+                print("targetObj deactivated");
+            }
+            else
+            {
+                print("exiting collider but target type still not defined");
+            }
+
             ButtonAnimator.Play("ButtonUpAnim");
-            ButtonAnimator.Play("ButtonNeutralAnim");
+            //ButtonAnimator.Play("ButtonNeutralAnim");
         }
+
 
     }
 
