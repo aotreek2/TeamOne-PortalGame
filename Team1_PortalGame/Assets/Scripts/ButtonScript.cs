@@ -19,7 +19,7 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] private string pickUpName;
 
     [SerializeField] private Animator ButtonAnimator;
-    private Animator elevatorDoorAnim;
+    //private Animator elevatorDoorAnim;
     private Animator doorAnimator;
  
     //Later add a text obj with a rejection message if it doesn't work
@@ -47,6 +47,7 @@ public class ButtonScript : MonoBehaviour
                 doorAnimator.Play("door_2_open");
                 //doorAnimator.Play("door_2_opened");
             }
+            /*
             else if (other.gameObject.tag == "Elevator")
             {
                 GameObject elevator = GameObject.Find("Elevator");
@@ -55,6 +56,7 @@ public class ButtonScript : MonoBehaviour
                 elevatorDoorAnim.Play("door_2_open");
                 elevatorDoorAnim.Play("door_2_opened");
             }
+            */
             else if (targetObj.tag == "Portal")//Portals
             {
                 //print("gameObject.tag is" + gameObject.tag);
