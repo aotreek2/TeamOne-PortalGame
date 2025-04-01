@@ -23,12 +23,21 @@ public class ElevatorScript : MonoBehaviour
         //door1Animator.Play("door_2_close");
     }
 
+    public void OpenDoors()
+    {
+        door1Animator.Play("door_2_open");
+    }
+
+    public void CloseDoors()
+    {
+        door1Animator.Play("door_2_close");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
             elevatorAnim.Play("ElevatorAnim");
-            door1Animator.Play("door_2_open");
         }
     }
 
