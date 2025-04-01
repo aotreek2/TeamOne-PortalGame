@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float groundCheckDistance = 1f;
 
     [Header("Script Related")]
+    [SerializeField] GameManager gameManager;
     Rigidbody rb;
 
  //Fall Damage Related
@@ -37,28 +38,25 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>(); //finds character controller component
+        gameManager = FindFirstObjectByType<GameManager>();
         Cursor.lockState = CursorLockMode.Locked; //locks and hides cursor
         Cursor.visible = false;
     }
 
     private void Update()
     {
-        Movement();
+        MovementInputs();
         Rotate();
         PickUp();
     }
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
-        rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
+        Movement();
     }
 
     #region Handles Movment
-    private void Movement()
+    private void MovementInputs()
     {
         isGrounded = IsGrounded();
 
@@ -84,6 +82,15 @@ public class PlayerMovement : MonoBehaviour
 
         
         previousHeight = transform.position.y;
+    }
+
+    private void Movement()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 move = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+        rb.MovePosition(rb.position + move * moveSpeed * Time.deltaTime);
     }
 
     #endregion
@@ -189,9 +196,13 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
-void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-       
+        if(other.gameObject.tag == "WinCube")
+        {
+            gameManager.hasWon = true;
+            playerCamera.transform.parent = null;
+        }
     }
 }
 

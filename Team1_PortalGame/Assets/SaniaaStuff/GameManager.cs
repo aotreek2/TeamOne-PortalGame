@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float fallDamage = 0f;
     [SerializeField] private MenuController menuController;
     [SerializeField] private PlayerMovement playerMovement;
+    public bool hasWon;
 
 
     private void Awake()
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         menuController.DisableEndGamePanel();
         healthTxt.text = "Health: " + playerHealth;
         playerHealth = 100;
+        Time.timeScale = 1f;
         // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
     }
 
@@ -51,11 +53,20 @@ public class GameManager : MonoBehaviour
     public void Death()
     {
         menuController.EnableEndGamePanel();
+        menuController.outcomeTxt.text = "You Died!";
         Debug.Log("Player has Died");
         //playerMovement.RespawnAtCheckpoint();
     }
 
-private IEnumerator FlashRedScreen()
+    public void Win()
+    {
+        menuController.EnableEndGamePanel();
+        menuController.outcomeTxt.text = "You Won!";
+        Debug.Log("Player has Died");
+        //playerMovement.RespawnAtCheckpoint();
+    }
+
+    private IEnumerator FlashRedScreen()
     {
         
         redFlashImage.enabled = true;
@@ -70,6 +81,10 @@ private IEnumerator FlashRedScreen()
         {
             Death();
         }
-      
+        else if(hasWon == true)
+        {
+            Win();
+        }
+
     }
 }

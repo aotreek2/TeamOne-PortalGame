@@ -66,6 +66,7 @@ public class MenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         endGamePanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
 
