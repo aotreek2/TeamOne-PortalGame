@@ -877,6 +877,8 @@ MonoBehaviour:
 
     E - Pick Up
 
+    G - Drop
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33497e1e0f6feac4eb3b7c619172d25b, type: 2}
@@ -904,7 +906,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.65
+  m_fontSize: 47.8
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
