@@ -68,5 +68,6 @@ public class MenuController : MonoBehaviour
         endGamePanel.SetActive(true);
         Time.timeScale = 0;
     }
+    
 }
 
