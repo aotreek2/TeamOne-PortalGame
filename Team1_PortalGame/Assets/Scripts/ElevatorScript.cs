@@ -20,7 +20,6 @@ public class ElevatorScript : MonoBehaviour
     public void PlayCloseSFX()
     {
         closeSFX.Play();
-        //door1Animator.Play("door_2_close");
     }
 
     public void OpenDoors()
