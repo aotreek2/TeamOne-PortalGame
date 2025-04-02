@@ -13,13 +13,11 @@ public class GameManager : MonoBehaviour
     public float fallDamage = 0f;
     [SerializeField] private MenuController menuController;
     [SerializeField] private PlayerMovement playerMovement;
+     private float damageTimer = 0f; //to check when the player last took damage
     public bool hasWon;
 
 
-    private void Awake()
-    {
-        
-    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +27,7 @@ public class GameManager : MonoBehaviour
         healthTxt.text = "Health: " + playerHealth;
         playerHealth = 100;
         Time.timeScale = 1f;
-        // redFlashImage = GameObject.Find("RedFlash").GetComponent<Image>();
+        damageTimer = 0f;
     }
 
 
@@ -40,6 +38,7 @@ public class GameManager : MonoBehaviour
         playerHealth -= 15;
         healthTxt.text = "Health: " + playerHealth;
         Debug.Log("Player hit " + playerHealth);
+        damageTimer = 0f; //resets the timer 
         StartCoroutine(FlashRedScreen());
     }
 
@@ -74,9 +73,31 @@ public class GameManager : MonoBehaviour
         redFlashImage.enabled = false;
     }
 
+    private void RegainHealth(float amount)
+    {
+        playerHealth += amount;
+        
+        if (playerHealth > 100) //makes sure health doesnt go over 100
+        {
+            playerHealth = 100;
+        }
+        healthTxt.text = "Health: " + playerHealth;
+        Debug.Log("Player regained health: " + playerHealth);
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+        if (damageTimer >= 5f) //regain health if you havent taken damage in x amount of secs
+        {
+            RegainHealth(15);
+            damageTimer = 0f;
+        }
+
+          damageTimer += Time.deltaTime;
+
+
        if (playerHealth <= 0)
         {
             Death();

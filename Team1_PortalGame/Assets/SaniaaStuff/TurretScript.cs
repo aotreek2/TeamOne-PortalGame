@@ -57,12 +57,12 @@ public class TurretScript : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+      /*  if (Input.GetKeyDown(KeyCode.Space)) //for testing
         {
             attackMode = !attackMode;
             idleMode = !attackMode; 
            
-        }
+        } */ 
 
         if(idleMode == true)
         {
