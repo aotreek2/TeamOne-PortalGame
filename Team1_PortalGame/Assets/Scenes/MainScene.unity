@@ -15112,6 +15112,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
   m_PrefabInstance: {fileID: 1002809484}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1002809487 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9546954, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
+  m_PrefabInstance: {fileID: 1002809484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1016425055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25946,7 +25951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3146b8826eefd4127a3e1f5454ed6eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalDoorAnimator: {fileID: 0}
+  finalDoorAnimator: {fileID: 1002809487}
 --- !u!65 &1781080084
 BoxCollider:
   m_ObjectHideFlags: 0
