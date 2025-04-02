@@ -26358,10 +26358,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 115324, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
-      propertyPath: m_TagString
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45.57
@@ -26401,10 +26397,6 @@ PrefabInstance:
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 476950, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
