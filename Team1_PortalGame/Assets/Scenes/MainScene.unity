@@ -12310,7 +12310,7 @@ MonoBehaviour:
   elevatorAnim: {fileID: 858450488}
   openSFX: {fileID: 858450490}
   closeSFX: {fileID: 858450491}
-  door1Animator: {fileID: 858450488}
+  door1Animator: {fileID: 1546571035}
 --- !u!82 &858450490
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21997,6 +21997,11 @@ PrefabInstance:
 --- !u!4 &1546571033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
+  m_PrefabInstance: {fileID: 1546571032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1546571035 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9546954, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
   m_PrefabInstance: {fileID: 1546571032}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1547759413

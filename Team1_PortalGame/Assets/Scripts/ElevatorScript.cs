@@ -25,11 +25,13 @@ public class ElevatorScript : MonoBehaviour
     public void OpenDoors()
     {
         door1Animator.Play("door_2_open");
+        print("played door open");
     }
 
     public void CloseDoors()
     {
         door1Animator.Play("door_2_close");
+        print("play door close");
     }
 
     private void OnTriggerEnter(Collider other)
